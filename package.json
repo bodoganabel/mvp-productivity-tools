@@ -12,10 +12,35 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "mvp-productivity-tools.copyFileForChatGPT",
+          "group": "navigation"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "mvp-productivity-tools.copyFileForChatGPT",
+          "group": "navigation",
+          "when": "resourceLangId == markdown"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "mvp-productivity-tools.copyFileForChatGPT",
+          "group": "navigation"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "mvp-productivity-tools.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "mvp-productivity-tools.copyFileForChatGPT",
+        "title": "[MVP tools] Copy file for ChatGPT"
       }
     ]
   },
